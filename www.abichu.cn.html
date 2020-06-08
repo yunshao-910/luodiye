@@ -1,0 +1,197 @@
+
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui"><meta content=yes name=apple-mobile-web-app-capable><meta name=applicable-device content=mobile><title>恒易贷</title><meta content=black name=apple-mobile-web-app-status-bar-style><script async src="https://www.googletagmanager.com/gtag/js?id=UA-120811851-2"></script><script>// var HOST = window.location.hostname
+// var hostnameu = 'http://10.100.13.51/h5'
+// if (HOST === 'img.hengchang6.com' || HOST === 'hyd.hengchang6.com' || HOST === 'm.hengyidai.com') {
+hostnameu = 'https://img.hengchang6.com'
+// }
+document.write("<script type='text/javascript' src='" + hostnameu + "/jsd_hyd/js/jquery-1.11.3.min.js'><\/script>")</script><meta name=description content=恒昌恒易贷官网登录,客服电话95713><meta name=keywords content=恒易贷登录,恒昌,恒昌恒易贷登录,恒易贷官网,恒易贷官网登录><meta content=black name=apple-mobile-web-app-status-bar-style><script>// deviceCode   其他位置请不要使用deviceCode
+if (!sessionStorage.getItem("deviceCode") || typeof sessionStorage.getItem("deviceCode") === 'undefined') {
+    window.deviceCode = 'h5' + Math.random() * 1000
+    sessionStorage.setItem("deviceCode", window.deviceCode)
+} else {
+    window.deviceCode = sessionStorage.getItem("deviceCode")
+}
+/* eslint-disable no-unused-expressions */</script><script>var param = {}
+var insertHead = document.getElementsByTagName("head")[0]
+if (location.search.indexOf("?") !== -1) {
+    var url = '?' + location.search.split('?')[1]
+    // if (parseInt(url.indexOf("?")) !== -1) {
+    var str = url.substr(1)
+    var strArr = str.split("&")
+    for (var i = 0; i < strArr.length; i++) {
+        param[strArr[i].split("=")[0]] = decodeURI(strArr[i].split("=")[1]) // 可解析中文
+    }
+    // }
+}
+console.log(param)
+console.log(param['utm_source'])
+switch (true) {
+    case param['utm_sorname'] && param['utm_sorname'].includes('陌陌') || param['utm_source'] && param['utm_source'].includes('MM-'):
+        // 陌陌的代码
+        (function (root) {
+            window.logsMomoUserId = param['MM']
+            var jsonpScript = document.createElement("script")
+            jsonpScript.type = "text/javascript"
+            jsonpScript.src = "https://s.momocdn.com/w/u/others/custom/conver/mycustom/converjsonp.js?r=" + Math.ceil(Math.random() * 10)
+            var heads = document.getElementsByTagName('script')[0]
+            heads.parentNode.insertBefore(jsonpScript, heads)
+        })(window)
+        break
+    case param['utm_sorname'] && param['utm_sorname'].includes('搜狐汇算') || param['utm_sorname'] && param['utm_source'].includes('SH-'):
+        // sohu的代码
+        (function (root) {
+            var script = document.createElement('script')
+            script.type = 'text/javascript'
+            script.async = true
+            script.src = '//front-end.bjcnc.scs.sohucs.com/track-report/adTackRport.js'
+            script.onerror = function () { }
+            var s = document.getElementsByTagName('script')[0]
+            s.parentNode.insertBefore(script, s)
+        })(window)
+        break
+    case param['utm_sorname'] && param['utm_sorname'].includes('360手助信息流') || param['utm_source'] && param['utm_source'].includes('360SZ-'):
+        // 360的代码
+        (function (b, a, e, h, f, c, g, s) {
+            b[h] = b[h] || function () { (b[h].c = b[h].c || []).push(arguments) }
+            b[h].s = !!c; g = a.getElementsByTagName(e)[0]; s = a.createElement(e)
+            s.src = "//s.union.360.cn/" + f + ".js"; s.defer = !0; s.async = !0; g.parentNode.insertBefore(s, g)
+        })(window, document, "script", "_qha", 290916, false)
+        break
+    case param['utm_sorname'] && param['utm_sorname'].includes('UC信息流') || param['utm_source'] && param['utm_source'].includes('UC-'):
+        // uc的代码
+        (function (w, d, t, s, q, m, n) { if (w.utq) return; q = w.utq = function () { q.process ? q.process(arguments) : q.queue.push(arguments) }; q.queue = []; m = d.getElementsByTagName(t)[0]; n = d.createElement(t); n.src = s; n.async = true; m.parentNode.insertBefore(n, m) })(window, document, 'script', 'https://image.uc.cn/s/uae/g/0s/ad/utracking.js'); utq('set', 'convertMode', true); utq('set', 'trackurl', 'huichuan.sm.cn/lp')
+        break
+    case param['utm_sorname'] && param['utm_sorname'].includes('网易新闻') || param['utm_source'] && param['utm_source'].includes('WYXX'):
+        // 网易的代码
+        (function () {
+            var ns = document.createElement('script'); ns.type = 'text/javascript'; ns.async = true
+            ns.src = 'https://163h5.nos-jd.163yun.com/h5/libs/analyze.js'
+            var f = document.getElementsByTagName('script')[0]; f.parentNode.insertBefore(ns, f)
+        })()
+        console.log('网易')
+        var lunxun = setInterval(function () {
+            if (typeof _nfe !== "undefined") {
+                _nfe.report({ convert_id: '131', convert_method: '1', convert_type: '8' })
+                clearInterval(lunxun)
+            }
+        }, 1000)
+        break
+    case param['utm_sorname'] && param['utm_sorname'].includes('快手') || param['utm_source'] && param['utm_source'].includes('KS-'):
+        // 快手的代码
+        (function (root) {
+            console.log('@@@@@@@@@@@@@@@@@@@@快手的代码')
+            var ksscript = document.createElement('script'); ksscript.type = 'text/javascript'; ksscript.async = true
+            ksscript.src = 'https://static.yximgs.com/udata/pkg/ks-ad-trace-sdk/ks-trace.0.0.8.beta.js'
+            ksscript.onerror = function () {
+                var request = new XMLHttpRequest()
+                var cb = (function(t) { var e = new RegExp("(^|&)" + t + "=([^&|#]*)(&|#|$)"), n = window.location.href.indexOf('?') > -1 ? window.location.href.split('?')[1].match(e) : null; return n != null ? decodeURIComponent(n[2]) : null }('callback'))
+                var url = 'https://e.kuaishou.com/rest/log/activate?jsEventType=3&callback=' + cb + '&eventType=4&eventTime=' + Date.now()
+                request.open('GET', url, true)
+                request.send(null)
+            }
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ksscript, s)
+        })(window)
+        break
+    default: break
+}
+Date.prototype.Format = function (fmt) { // author: meizz
+    var o = {
+        "M+": this.getMonth() + 1, // 月份
+        "d+": this.getDate(), // 日
+        "h+": this.getHours(), // 小时
+        "m+": this.getMinutes(), // 分
+        "s+": this.getSeconds(), // 秒
+        "q+": Math.floor((this.getMonth() + 3) / 3), // 季度
+        "S": this.getMilliseconds() // 毫秒
+    }
+    if (/(y+)/.test(fmt)) { fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length)) }
+    // eslint-disable-next-line eqeqeq
+    for (var k in o) { if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length))) }
+    return fmt
+}</script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script>/* eslint-disable no-undef */
+window.dataLayer = window.dataLayer || []
+
+function gtag() {
+    dataLayer.push(arguments)
+}
+gtag('js', new Date())
+gtag('config', 'UA-120811851-2')</script><link href=./static/css/app.e0f109913ec2565b6e7876366ecabbf7.css rel=stylesheet></head><body><!--[if lte IE 8]> <div style="text-align: center;margin-top: 200px;font-size: 40px;">暂不支持ie8及以下，请在其他浏览器中打开</div><![endif]--><div id=app></div><div id=burryPosition></div><style>html,
+body {
+    width: 100%;
+    height: 100%;
+}</style><script type=text/javascript src=./static/js/manifest.ada50a3f0775ba322a20.js></script><script type=text/javascript src=./static/js/vendor.de46b5625eb03e94f58c.js></script><script type=text/javascript src=./static/js/app.d17ea32b948816ca4f81.js></script></body><script charset=utf-8 type=text/javascript>/* eslint-disable */
+// 诸葛埋点
+
+//< !--GrowingIO Analytics code version 2.1 -- >
+//< !--Copyright 2015 - 2018 GrowingIO, Inc.More info available at http://www.growingio.com -->
+!function(e,t,n,g,i){e[i] = e[i] || function () { (e[i].q = e[i].q || []).push(arguments) },n=t.createElement("script"),tag=t.getElementsByTagName("script")[0],n.async=1,n.src=('https:'==document.location.protocol?'https://':'http://')+g,tag.parentNode.insertBefore(n,tag)}(window,document,"script","assets.giocdn.com/2.1/gio.js","gio");
+gio('init','8f98b455a3a18eb4', {});
+
+//custom page code begin here
+//custom page code end here
+gio('send');
+//<!-- End GrowingIO Analytics code version: 2.1 -->
+// 大数据埋点
+function buryPointSendData(data) {
+    var data = JSON.stringify(data)
+    $.ajax({
+        type: 'POST',
+        data: {
+            jsonParams: data
+        },
+        url: 'https://datahouse.hengyidai.com/dw/excute',
+        dataType: "jsonp", //数据类型为jsonp
+        jsonp: "jsonpCallback", //服务端用于接收callback调用的function名的参数
+        success: function (data) {
+            console.log('接口请求成功', data)
+        }
+    });
+}
+window.suffix = 'jsd'
+var jaq = jaq || [];
+jaq.push(['account', 'LA2017_23111']);
+jaq.push(['domain', 'www.bigdata.com']);
+
+(function () {
+    var ja = document.createElement('script');
+    ja.type = 'text/javascript';
+    ja.async = true;
+    ja.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'la.hengchang6.com/wl.js';
+    var s = document.getElementById("burryPosition")
+    s.parentNode.insertBefore(ja, s);
+})();
+
+// 站长统计
+(function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementById("burryPosition")
+    s.parentNode.insertBefore(bp, s);
+})();
+// 谷歌的埋点统计
+window.dataLayer = window.dataLayer || [];
+
+function gtag() {
+    dataLayer.push(arguments);
+}
+gtag('js', new Date());
+gtag('config', 'UA-120811851-2');
+(function () {
+    var hm = document.createElement("script");
+    hm.src = "https://www.googletagmanager.com/gtag/js?id=UA-120811851-2";
+    var s = document.getElementById("burryPosition")
+    s.parentNode.insertBefore(hm, s);
+})();
+// 百度统计
+var _hmt = _hmt || [];
+(function () {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?91497e774e09e4eba4ec8fb24c5a9479";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();</script></html>
